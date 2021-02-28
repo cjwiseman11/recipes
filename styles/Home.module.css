@@ -1,6 +1,7 @@
 .title {
   text-align: center;
   margin: 0;
+  color: #ee5e07;
 }
 
 .container {
@@ -28,11 +29,18 @@
   padding: 8px 8px;
 }
 
-.stepsList li:hover {
+.stepsList li:hover, .stepsList li:focus {
   background: #000000;
   outline: 1px solid;
 }
 
 .footer {
   text-align: center;
+}
+
+.heading {
+  border-top: 2px solid #ee5e07;
+  padding-top: 8px;
+  font-weight: 700;
+  margin: 0;
 }

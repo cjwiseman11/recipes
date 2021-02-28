@@ -13,7 +13,7 @@ export default function Enchiladas({ unitType = 'uk' }) {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Enchiladas
         </h1>
         <div className={styles.recipeContainer}>
           <div className={styles.ingredients}>
@@ -29,15 +29,15 @@ export default function Enchiladas({ unitType = 'uk' }) {
             <p>Rest of the ingredients</p>
             <ul>
               <li>{formatIngredient(3, 'tablespoon', 'Olive Oil', unitType)}</li>
-              <li>1 400g tin of Chopped Tomatoes</li>
-              <li>1 teaspoon of cider vinegar</li>
+              <li>{formatIngredient(400, 'g', 'Chopped Tomatoes', unitType)}1 400g tin of Chopped Tomatoes</li>
+              <li>{formatIngredient(1, 'teaspoon', 'cider vinegar', unitType)}</li>
               <li>1 Vegetable stock cube</li>
             </ul>
           </div>
           <div className={styles.steps}>
             <h2>Steps</h2>
             <div>
-              <p>Enchilada Sauce</p>
+              <p className={styles.heading}>Enchilada Sauce</p>
               <ol className={styles.stepsList}>
                 <li>Heat 3 tablespoons of olive oil in a pan on a medium heat</li>
                 <li>Once the oil is hot, pour in all the dry ingredients and start whisking/stirring (You can tell the oil is hot enough by putting a pinch of flour in and it should sizzle)</li>
@@ -47,7 +47,7 @@ export default function Enchiladas({ unitType = 'uk' }) {
               </ol>
             </div>
             <div>
-              <p>Enchilada time</p>
+              <p className={styles.heading}>Enchilada time</p>
               <ol className={styles.stepsList}>
                 <li>Fry the cauliflower and</li>
                 <li>Once the oil is hot, pour in all the dry ingredients and start whisking/stirring (You can tell the oil is hot enough by putting a pinch of flour in and it should sizzle)</li>
