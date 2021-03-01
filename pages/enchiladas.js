@@ -59,10 +59,6 @@ export default function Enchiladas({ unitType = 'uk' }) {
           </div>
         </div>
       </main>
-
-      <footer className={styles.footer}>
-        <p><a href="https://peppertech.co.uk">Peppertech UK</a></p>
-      </footer>
     </div>
   )
 }
