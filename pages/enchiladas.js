@@ -1,9 +1,26 @@
+import { useState } from 'react';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 
 import formatIngredient from '../components/formatIngredient';
 
 export default function Enchiladas({ unitType = 'uk' }) {
+  const [ingredient, setIngredient] = useState(null);
+
+  const ingredients = [formatIngredient(3, 'tablespoon', 'Flour', unitType)];
+
+  const getIngredient = (index, Component = 'span') => {
+    return (
+      <Component
+        onMouseEnter={() => setIngredient(index)}
+        onMouseLeave={() => setIngredient(null)}
+        className={[index].includes(ingredient) ? styles.hover : ''}
+      >
+        {ingredients[index]}
+      </Component>
+    );
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -13,12 +30,13 @@ export default function Enchiladas({ unitType = 'uk' }) {
 
       <main className={styles.main}>
         <h1 className={styles.title}>Enchiladas</h1>
+        <p>Full enchiladas recipe with homemade sauce</p>
         <div className={styles.recipeContainer}>
           <div className={styles.ingredients}>
             <h2>Ingredients</h2>
             <p>Dry ingredients</p>
             <ul>
-              <li>{formatIngredient(3, 'tablespoon', 'Flour', unitType)}</li>
+              {getIngredient(0, 'li')}
               <li>
                 {formatIngredient(1, 'tablespoon', 'Mild Chilli Powder', unitType)} (hot if you want
                 it spicy!)
@@ -47,9 +65,9 @@ export default function Enchiladas({ unitType = 'uk' }) {
               <ol className={styles.stepsList}>
                 <li>Heat 3 tablespoons of olive oil in a pan on a medium heat</li>
                 <li>
-                  Once the oil is hot, pour in all the dry ingredients and start whisking/stirring
-                  (You can tell the oil is hot enough by putting a pinch of flour in and it should
-                  sizzle)
+                  Once the oil is hot, pour in all the dry ingredients ( {getIngredient(0, 'span')},
+                  chilli powder, cumin, oregano, garlic salt) and start whisking/stirring (You can
+                  tell the oil is hot enough by putting a pinch of flour in and it should sizzle)
                 </li>
                 <li>
                   After around 1 minute, pour in the chopped tomatoes and stir until mixed. You can
