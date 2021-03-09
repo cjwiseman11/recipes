@@ -7,9 +7,15 @@ import formatIngredient from '../components/formatIngredient';
 export default function Enchiladas({ unitType = 'uk' }) {
   const [ingredient, setIngredient] = useState(null);
 
-  const ingredients = [formatIngredient(3, 'tablespoon', 'Flour', unitType)];
+  const ingredients = [
+    formatIngredient(3, 'tablespoon', 'Flour', unitType),
+    formatIngredient(1, 'tablespoon', 'Chilli Powder', unitType),
+    formatIngredient(1, 'tablespoon', 'Cumin', unitType),
+    formatIngredient(1, 'teaspoon', 'Oregano', unitType),
+    formatIngredient(1, 'teaspoon', 'Garlic Salt', unitType),
+  ];
 
-  const getIngredient = (index, Component = 'span') => {
+  const getIngredient = (index, Component = 'span', info) => {
     return (
       <Component
         onMouseEnter={() => setIngredient(index)}
@@ -17,6 +23,7 @@ export default function Enchiladas({ unitType = 'uk' }) {
         className={[index].includes(ingredient) ? styles.hover : ''}
       >
         {ingredients[index]}
+        {info}
       </Component>
     );
   };
@@ -37,15 +44,10 @@ export default function Enchiladas({ unitType = 'uk' }) {
             <p>Dry ingredients</p>
             <ul>
               {getIngredient(0, 'li')}
-              <li>
-                {formatIngredient(1, 'tablespoon', 'Mild Chilli Powder', unitType)} (hot if you want
-                it spicy!)
-              </li>
-              <li>{formatIngredient(1, 'tablespoon', 'Cumin', unitType)}</li>
-              <li>{formatIngredient(1, 'teaspoon', 'Oregano', unitType)}</li>
-              <li>
-                {formatIngredient(1, 'teaspoon', 'Garlic Salt', unitType)} (or 1/2 of just salt!)
-              </li>
+              {getIngredient(1, 'li', 'Use Mild or Hot depending on how spicy you like it')}
+              {getIngredient(2, 'li')}
+              {getIngredient(3, 'li')}
+              {getIngredient(4, 'li', ' (or 1/2 of just salt!)')}
             </ul>
             <p>Rest of the ingredients</p>
             <ul>
@@ -64,10 +66,15 @@ export default function Enchiladas({ unitType = 'uk' }) {
               <p className={styles.heading}>Enchilada Sauce</p>
               <ol className={styles.stepsList}>
                 <li>Heat 3 tablespoons of olive oil in a pan on a medium heat</li>
-                <li>
-                  Once the oil is hot, pour in all the dry ingredients ( {getIngredient(0, 'span')},
-                  chilli powder, cumin, oregano, garlic salt) and start whisking/stirring (You can
-                  tell the oil is hot enough by putting a pinch of flour in and it should sizzle)
+                <li className={[0, 1, 2, 3, 4].includes(ingredient) ? styles.hover : ''}>
+                  Once the oil is hot, pour in all the dry ingredients{' '}
+                  <span class="verbose">
+                    ({getIngredient(0, 'span')}, {getIngredient(1, 'span')},{' '}
+                    {getIngredient(2, 'span')}, {getIngredient(3, 'span')},{' '}
+                    {getIngredient(4, 'span')})
+                  </span>{' '}
+                  and start whisking/stirring (You can tell the oil is hot enough by putting a pinch
+                  of flour in and it should sizzle)
                 </li>
                 <li>
                   After around 1 minute, pour in the chopped tomatoes and stir until mixed. You can
