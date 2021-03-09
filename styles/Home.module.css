@@ -1,12 +1,6 @@
 .title {
   text-align: center;
   margin: 0;
-  color: #ee5e07;
-}
-
-.container {
-  height: 100vh;
-  width: 100vw;
 }
 
 @media (min-width: 600px) {
@@ -16,8 +10,7 @@
 }
 
 .container {
-  height: 100vh;
-  width: 100vw;
+  width: 100%;
 }
 
 .steps, .ingredients {
@@ -31,7 +24,7 @@
 
 .stepsList li:hover, .stepsList li:focus, .hover {
   background: #000000;
-  outline: 1px solid;
+  outline: 1px solid #9bff00;
 }
 
 .footer {
@@ -39,8 +32,27 @@
 }
 
 .heading {
-  border-top: 2px solid #ee5e07;
+  border-top: 2px solid #9bff00;
   padding-top: 8px;
-  font-weight: 700;
+  font-weight: 500;
   margin: 0;
+}
+
+.ingredientsList li, .stepsList li {
+  padding: 8px;
+}
+
+.main {
+  width: 95vw;
+  margin: 0 auto;
+  max-width: 1420px;
+}
+
+.banner {
+  height: 25vh;
+  width: 100%;
+  margin: 24px 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
