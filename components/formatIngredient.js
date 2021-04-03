@@ -1,30 +1,30 @@
 const measurementMap = {
   tablespoon: {
-    uk: {
+    UK: {
       multiplier: 1,
       value: 'tablespoon',
     },
-    us: {
+    US: {
       multiplier: 1.2,
       value: 'tablespoon',
     },
   },
   teaspoon: {
-    uk: {
+    UK: {
       multiplier: 1,
       value: 'teaspoon',
     },
-    us: {
+    US: {
       multiplier: 1.2,
       value: 'teaspoon',
     },
   },
   g: {
-    uk: {
+    UK: {
       multiplier: 1,
       value: 'g',
     },
-    us: {
+    US: {
       multiplier: 0.035,
       value: 'oz',
     },

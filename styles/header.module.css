@@ -1,3 +1,8 @@
+.headerContainer {
+  display: flex;
+  justify-content: center;
+}
+
 .header {
   display: flex;
   justify-content: center;
@@ -6,4 +11,9 @@
 
 .header h1 {
   margin-left: 16px;
+}
+
+.switches {
+  display: flex;
+  align-items: center;
 }

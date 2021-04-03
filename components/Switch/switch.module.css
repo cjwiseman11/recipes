@@ -1,0 +1,22 @@
+.container {
+  width: 50%;
+  max-width: 200px
+}
+
+.control {
+  display: flex;
+  align-items: center;
+}
+
+.control + .control {
+  margin-top: 4px;
+}
+
+.control input {
+  height: 2em;
+  width: 2em;
+}
+
+.control label {
+  margin-left: 12px;
+}

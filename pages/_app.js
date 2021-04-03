@@ -2,26 +2,26 @@ import '../styles/globals.css';
 import styles from '../styles/header.module.css';
 import Head from 'next/head';
 import Link from 'next/link';
-import Switch from '../components/Switch';
+import Switch from '../components/Switch/index';
 import { useState } from 'react';
 
 function MyApp({ Component, pageProps }) {
   const [settings, setSettings] = useState({
-    measurement: 'uk',
+    measurement: 'UK',
     verbose: true,
   });
 
   const handleMeasurement = (result) => {
     setSettings({
       ...settings,
-      measurement: result ? 'us' : 'uk',
+      measurement: result,
     });
   };
 
   const handleVerbose = (result) => {
     setSettings({
       ...settings,
-      verbose: result ? false : true,
+      verbose: result === 'No' ? false : true,
     });
   };
 
@@ -37,7 +37,7 @@ function MyApp({ Component, pageProps }) {
           rel="stylesheet"
         />
       </Head>
-      <header>
+      <header className={styles.headerContainer}>
         <Link href="/">
           <a>
             <div className={styles.header}>
@@ -46,9 +46,12 @@ function MyApp({ Component, pageProps }) {
             </div>
           </a>
         </Link>
+        <div className={styles.switches}>
+          <Switch label="Measurement" onSelected={handleMeasurement} options={['UK', 'US']} />
+          <Switch label="Verbose" onSelected={handleVerbose} options={['Yes', 'No']} />
+        </div>
       </header>
-      <Switch label="UK Measurements" onToggle={handleMeasurement} />
-      <Switch label="Verbose" onToggle={handleVerbose} />
+
       <div className={!settings.verbose ? 'simple' : ''}>
         <Component {...pageProps} settings={settings} />
       </div>
