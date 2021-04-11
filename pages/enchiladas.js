@@ -17,6 +17,8 @@ const Enchiladas = ({ settings }) => {
     formatIngredient(3, 'tablespoon', 'Olive Oil', measurement),
     formatIngredient(400, 'g', 'Chopped Tomatoes', measurement),
     formatIngredient(1, 'teaspoon', 'cider vinegar', measurement),
+    formatIngredient(0.5, 'whole', 'Cabbage', measurement),
+    formatIngredient(1, 'whole', 'Red Pepper', measurement),
   ];
 
   const getIngredient = (index, Component = 'span', info) => {
@@ -82,7 +84,7 @@ const Enchiladas = ({ settings }) => {
           <div>
             <p className={styles.heading}>Enchilada time</p>
             <ol className={styles.stepsList}>
-              <li>Fry the cauliflower and</li>
+              <li>Cut up </li>
               <li>
                 Once the oil is hot, pour in all the dry ingredients and start whisking/stirring
                 (You can tell the oil is hot enough by putting a pinch of flour in and it should
