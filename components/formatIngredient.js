@@ -29,6 +29,16 @@ const measurementMap = {
       value: 'oz',
     },
   },
+  whole: {
+    UK: {
+      multiplier: 1,
+      value: '',
+    },
+    US: {
+      multiplier: 1,
+      value: '',
+    },
+  },
 };
 
 const pluralise = (amount, measurement) => {

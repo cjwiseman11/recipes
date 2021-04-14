@@ -3,32 +3,44 @@ import styles from '../styles/Home.module.css';
 
 import PageContainer from '../components/pageContainer';
 import formatIngredient from '../components/formatIngredient';
+import {
+  flour,
+  chilliPowder,
+  cumin,
+  oregano,
+  garlicSalt,
+  oliveOil,
+  choppedTomatoes,
+  ciderVinegar,
+  cabbage,
+  redPepper,
+} from '../components/constants/ingredients';
 
 const Enchiladas = ({ settings }) => {
   const { measurement } = settings;
   const [ingredient, setIngredient] = useState(null);
 
-  const ingredients = [
-    formatIngredient(3, 'tablespoon', 'Flour', measurement),
-    formatIngredient(1, 'tablespoon', 'Chilli Powder', measurement),
-    formatIngredient(1, 'tablespoon', 'Cumin', measurement),
-    formatIngredient(1, 'teaspoon', 'Oregano', measurement),
-    formatIngredient(1, 'teaspoon', 'Garlic Salt', measurement),
-    formatIngredient(3, 'tablespoon', 'Olive Oil', measurement),
-    formatIngredient(400, 'g', 'Chopped Tomatoes', measurement),
-    formatIngredient(1, 'teaspoon', 'cider vinegar', measurement),
-    formatIngredient(0.5, 'whole', 'Cabbage', measurement),
-    formatIngredient(1, 'whole', 'Red Pepper', measurement),
-  ];
+  const ingredients = {
+    [flour]: formatIngredient(3, 'tablespoon', 'Flour', measurement),
+    [chilliPowder]: formatIngredient(1, 'tablespoon', 'Chilli Powder', measurement),
+    [cumin]: formatIngredient(1, 'tablespoon', 'Cumin', measurement),
+    [oregano]: formatIngredient(1, 'teaspoon', 'Oregano', measurement),
+    [garlicSalt]: formatIngredient(1, 'teaspoon', 'Garlic Salt', measurement),
+    [oliveOil]: formatIngredient(3, 'tablespoon', 'Olive Oil', measurement),
+    [choppedTomatoes]: formatIngredient(400, 'g', 'Chopped Tomatoes', measurement),
+    [ciderVinegar]: formatIngredient(1, 'teaspoon', 'cider vinegar', measurement),
+    [cabbage]: formatIngredient(0.5, 'whole', 'Cabbage', measurement),
+    [redPepper]: formatIngredient(1, 'whole', 'Red Pepper', measurement),
+  };
 
-  const getIngredient = (index, Component = 'span', info) => {
+  const getIngredient = (ingredientId, Component = 'span', info) => {
     return (
       <Component
-        onMouseEnter={() => setIngredient(index)}
+        onMouseEnter={() => setIngredient(ingredientId)}
         onMouseLeave={() => setIngredient(null)}
-        className={[index].includes(ingredient) ? styles.hover : ''}
+        className={ingredientId === ingredient ? styles.hover : ''}
       >
-        {ingredients[index]}
+        {ingredients[ingredientId]}
         {info}
       </Component>
     );
@@ -43,17 +55,21 @@ const Enchiladas = ({ settings }) => {
           <h2>Ingredients</h2>
           <p>Dry ingredients</p>
           <ul className={styles.ingredientsList}>
-            {getIngredient(0, 'li')}
-            {getIngredient(1, 'li', ' (use Mild or Hot depending on how spicy you like it)')}
-            {getIngredient(2, 'li')}
-            {getIngredient(3, 'li')}
-            {getIngredient(4, 'li', ' (or 1/2 of just salt!)')}
+            {getIngredient(flour, 'li')}
+            {getIngredient(
+              chilliPowder,
+              'li',
+              ' (use Mild or Hot depending on how spicy you like it)'
+            )}
+            {getIngredient(cumin, 'li')}
+            {getIngredient(oregano, 'li')}
+            {getIngredient(garlicSalt, 'li', ' (or 1/2 of just salt!)')}
           </ul>
           <p>Rest of the ingredients</p>
           <ul className={styles.ingredientsList}>
-            {getIngredient(5, 'li')}
-            {getIngredient(6, 'li')}
-            {getIngredient(7, 'li')}
+            {getIngredient(oliveOil, 'li')}
+            {getIngredient(choppedTomatoes, 'li')}
+            {getIngredient(ciderVinegar, 'li')}
             <li>1 Vegetable stock cube</li>
           </ul>
         </div>
@@ -63,22 +79,29 @@ const Enchiladas = ({ settings }) => {
             <p className={styles.heading}>Enchilada Sauce</p>
             <ol className={styles.stepsList}>
               <li>Heat {getIngredient(5, 'span')} in a pan on a medium heat</li>
-              <li className={[0, 1, 2, 3, 4].includes(ingredient) ? styles.hover : ''}>
+              <li
+                className={
+                  [flour, chilliPowder, cumin, oregano, garlicSalt].includes(ingredient)
+                    ? styles.hover
+                    : ''
+                }
+              >
                 Once the oil is hot, pour in all the dry ingredients{' '}
                 <span className="verbose">
-                  ({getIngredient(0, 'span')}, {getIngredient(1, 'span')},{' '}
-                  {getIngredient(2, 'span')}, {getIngredient(3, 'span')}, {getIngredient(4, 'span')}
-                  )
+                  ({getIngredient(flour, 'span')}, {getIngredient(chilliPowder, 'span')},{' '}
+                  {getIngredient(cumin, 'span')}, {getIngredient(oregano, 'span')},{' '}
+                  {getIngredient(garlicSalt, 'span')})
                 </span>{' '}
                 and start whisking/stirring (You can tell the oil is hot enough by putting a pinch
                 of flour in and it should sizzle)
               </li>
               <li>
-                After around 1 minute, pour in the {getIngredient(6, 'span')} and stir until mixed.
-                You can use a tiny bit of water to get any remaining tomato juice in the tin.
+                After around 1 minute, pour in the {getIngredient(choppedTomatoes, 'span')} and stir
+                until mixed. You can use a tiny bit of water to get any remaining tomato juice in
+                the tin.
               </li>
               <li>Reduce the heat to low and simmer for about 3 minutes</li>
-              <li>Stir in the {getIngredient(7, 'span')} and then turn off the heat</li>
+              <li>Stir in the {getIngredient(ciderVinegar, 'span')} and then turn off the heat</li>
             </ol>
           </div>
           <div>

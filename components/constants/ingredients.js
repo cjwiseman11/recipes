@@ -1,0 +1,11 @@
+export const flour = 'FLOUR';
+export const chilliPowder = 'CHILLI_POWDER';
+export const cumin = 'CUMIN';
+export const oregano = 'OREGANO';
+export const garlicSalt = 'GARLIC_SALT';
+export const oliveOil = 'OLIVE_OIL';
+export const choppedTomatoes = 'CHOPPED_TOMATOES';
+export const ciderVinegar = 'CIDER_VINEGAR';
+export const cauliflower = 'CAULIFLOWER';
+export const redPepper = 'RED_PEPPER';
+export const cabbage = 'CABBAGE';
