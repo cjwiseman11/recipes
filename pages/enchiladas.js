@@ -12,8 +12,9 @@ import {
   oliveOil,
   choppedTomatoes,
   ciderVinegar,
-  cabbage,
+  cauliflower,
   redPepper,
+  vegetableStock,
 } from '../components/constants/ingredients';
 
 const Enchiladas = ({ settings }) => {
@@ -29,8 +30,9 @@ const Enchiladas = ({ settings }) => {
     [oliveOil]: formatIngredient(3, 'tablespoon', 'Olive Oil', measurement),
     [choppedTomatoes]: formatIngredient(400, 'g', 'Chopped Tomatoes', measurement),
     [ciderVinegar]: formatIngredient(1, 'teaspoon', 'cider vinegar', measurement),
-    [cabbage]: formatIngredient(0.5, 'whole', 'Cabbage', measurement),
+    [cauliflower]: formatIngredient(0.5, 'whole', 'Cabbage', measurement),
     [redPepper]: formatIngredient(1, 'whole', 'Red Pepper', measurement),
+    [vegetableStock]: formatIngredient(1, 'whole', 'Vegetable stock cube', measurement),
   };
 
   const getIngredient = (ingredientId, Component = 'span', info) => {
@@ -70,7 +72,9 @@ const Enchiladas = ({ settings }) => {
             {getIngredient(oliveOil, 'li')}
             {getIngredient(choppedTomatoes, 'li')}
             {getIngredient(ciderVinegar, 'li')}
-            <li>1 Vegetable stock cube</li>
+            {getIngredient(cauliflower, 'li')}
+            {getIngredient(redPepper, 'li')}
+            {getIngredient(vegetableStock, 'li')}
           </ul>
         </div>
         <div className={styles.steps}>

@@ -48,9 +48,11 @@ const pluralise = (amount, measurement) => {
 
 const formatIngredient = (amount, measurement, ingredient, type) => {
   const { multiplier, value } = measurementMap[measurement][type];
-  const ingredientAmount = Math.floor(amount * multiplier);
+  const ingredientAmount = measurement === 'whole' ? amount : Math.floor(amount * multiplier);
 
-  return `${ingredientAmount} ${value}${pluralise(ingredientAmount, measurement)} of ${ingredient}`;
+  return `${ingredientAmount} ${value}${pluralise(ingredientAmount, measurement)} ${
+    measurement === 'whole' ? '' : `of`
+  } ${ingredient}`;
 };
 
 export default formatIngredient;

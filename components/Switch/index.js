@@ -20,7 +20,7 @@ const Switch = ({ label, options, onSelected }) => {
             name={option}
             value={option}
             checked={selected === option}
-            onClick={() => handleChange(option)}
+            onChange={() => handleChange(option)}
           />
           <label for={option}>{option}</label>
         </div>
