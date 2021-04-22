@@ -3,6 +3,8 @@ import styles from '../styles/Home.module.css';
 
 import PageContainer from '../components/pageContainer';
 import formatIngredient from '../components/formatIngredient';
+import Ingredient from '../components/Ingredient';
+
 import {
   flour,
   chilliPowder,
@@ -35,16 +37,15 @@ const Enchiladas = ({ settings }) => {
     [vegetableStock]: formatIngredient(1, 'whole', 'Vegetable stock cube', measurement),
   };
 
-  const getIngredient = (ingredientId, Component = 'span', info) => {
+  const getIngredient = (ingredientId, component = 'span', info) => {
     return (
-      <Component
-        onMouseEnter={() => setIngredient(ingredientId)}
-        onMouseLeave={() => setIngredient(null)}
-        className={ingredientId === ingredient ? styles.hover : ''}
-      >
-        {ingredients[ingredientId]}
-        {info}
-      </Component>
+      <Ingredient
+        isHighlighted={ingredients[ingredientId] === ingredient}
+        Component={component}
+        info={info}
+        ingredient={ingredients[ingredientId]}
+        onHighlight={setIngredient}
+      />
     );
   };
 

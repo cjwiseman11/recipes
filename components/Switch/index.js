@@ -10,10 +10,10 @@ const Switch = ({ label, options, onSelected }) => {
   };
 
   return (
-    <fieldset role="radio-group" className={styles.container}>
+    <fieldset key={label} role="radio-group" className={styles.container}>
       <legend>{label}</legend>
       {options.map((option) => (
-        <div className={styles.control}>
+        <div key={option} className={styles.control}>
           <input
             type="radio"
             id={option}
@@ -22,7 +22,7 @@ const Switch = ({ label, options, onSelected }) => {
             checked={selected === option}
             onChange={() => handleChange(option)}
           />
-          <label for={option}>{option}</label>
+          <label htmlFor={option}>{option}</label>
         </div>
       ))}
     </fieldset>
