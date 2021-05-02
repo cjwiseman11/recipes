@@ -10,3 +10,5 @@ export const cauliflower = 'CAULIFLOWER';
 export const redPepper = 'RED_PEPPER';
 export const cabbage = 'CABBAGE';
 export const vegetableStock = 'VEGETABLE_STOCK';
+export const cheese = 'CHEESE';
+export const tortilla = 'TORTILLA';

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Switch from '../components/Switch/index';
 import { useState } from 'react';
 
-function MyApp({ Component, pageProps }) {
+function Recipes({ Component, pageProps }) {
   const [settings, setSettings] = useState({
     measurement: 'UK',
     verbose: true,
@@ -64,4 +64,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default MyApp;
+export default Recipes;

@@ -42,7 +42,7 @@ const measurementMap = {
 };
 
 const pluralise = (amount, measurement) => {
-  if (['g'].includes(measurement)) return '';
+  if (['g', 'whole'].includes(measurement)) return '';
   return amount > 1 ? 's' : '';
 };
 
