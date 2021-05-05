@@ -13,6 +13,7 @@ I am trying out Jest with react-testing-library as I have only ever used it with
 
 ## Next Steps
 Currently there is just a single hard-coded recipe. It would be interesting to see how the API/dynamic routes works but this is a good starting point. Future ideas:
+- [ ] GitHub action to deploy to GitHub Pages / enforce SemVer
 - [ ] Improve UI / Homepage
 - [ ] Dynamically created recipes (others can submit recipes)
 - [ ] Ability to add notes to a recipe page
