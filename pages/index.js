@@ -9,8 +9,8 @@ export default function Home() {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <div className={styles.recipeContainer}>
+      <main className={styles.home}>
+        <div className={styles.recipeLink}>
           <Link href="/enchiladas"><a>Enchiladas</a></Link>
         </div>
       </main>

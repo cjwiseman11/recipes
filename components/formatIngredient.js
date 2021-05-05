@@ -5,7 +5,7 @@ const measurementMap = {
       value: 'tablespoon',
     },
     US: {
-      multiplier: 1.2,
+      multiplier: 1,
       value: 'tablespoon',
     },
   },
@@ -15,7 +15,7 @@ const measurementMap = {
       value: 'teaspoon',
     },
     US: {
-      multiplier: 1.2,
+      multiplier: 1,
       value: 'teaspoon',
     },
   },
@@ -42,13 +42,14 @@ const measurementMap = {
 };
 
 const pluralise = (amount, measurement) => {
-  if (['g'].includes(measurement)) return '';
+  if (['g', 'whole'].includes(measurement)) return '';
   return amount > 1 ? 's' : '';
 };
 
 const formatIngredient = (amount, measurement, ingredient, type) => {
   const { multiplier, value } = measurementMap[measurement][type];
-  const ingredientAmount = measurement === 'whole' ? amount : Math.floor(amount * multiplier);
+  const ingredientAmount =
+    measurement === 'whole' ? amount : (amount * multiplier).toFixed(2).replace('.00', ''); // Math.floor(amount * multiplier);
 
   return `${ingredientAmount} ${value}${pluralise(ingredientAmount, measurement)} ${
     measurement === 'whole' ? '' : `of`

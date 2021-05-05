@@ -27,8 +27,8 @@
   outline: 1px solid #9bff00;
 }
 
-.footer {
-  text-align: center;
+.clicked {
+  outline-width: 2px;
 }
 
 .heading {
@@ -55,4 +55,19 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.home {
+  margin-top: 40px;
+}
+
+.recipeLink {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.ingredient {
+  cursor: pointer;
 }

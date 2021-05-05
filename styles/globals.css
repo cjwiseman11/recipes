@@ -25,3 +25,9 @@ h1, h2 {
 .simple .verbose {
   display: none;
 }
+
+footer {
+  position: fixed;
+  left: 8px;
+  bottom: 0;
+}
