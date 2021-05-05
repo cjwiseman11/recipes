@@ -3,7 +3,7 @@ import styles from '../styles/Home.module.css';
 
 import PageContainer from '../components/pageContainer';
 import formatIngredient from '../components/formatIngredient';
-import Ingredient from '../components/Ingredient';
+import Ingredient from '../components/Ingredient/index';
 
 import {
   flour,
