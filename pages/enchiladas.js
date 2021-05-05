@@ -7,7 +7,7 @@ import Ingredient from '../components/Ingredient';
 
 import {
   flour,
-  chilliPowder,
+  smokedPaprika,
   cumin,
   oregano,
   garlicSalt,
@@ -28,11 +28,11 @@ const Enchiladas = ({ settings }) => {
 
   const ingredients = {
     [flour]: formatIngredient(3, 'tablespoon', 'Flour', measurement),
-    [chilliPowder]: formatIngredient(1, 'tablespoon', 'Chilli Powder', measurement),
-    [cumin]: formatIngredient(1, 'tablespoon', 'Cumin', measurement),
+    [smokedPaprika]: formatIngredient(1, 'tablespoon', 'Smoked Paprika', measurement),
+    [cumin]: formatIngredient(2, 'teaspoon', 'Cumin', measurement),
     [oregano]: formatIngredient(1, 'teaspoon', 'Oregano', measurement),
     [garlicSalt]: formatIngredient(1, 'teaspoon', 'Garlic Salt', measurement),
-    [oliveOil]: formatIngredient(3, 'tablespoon', 'Olive Oil', measurement),
+    [oliveOil]: formatIngredient(2, 'tablespoon', 'Olive Oil', measurement),
     [choppedTomatoes]: formatIngredient(400, 'g', 'Chopped Tomatoes', measurement),
     [ciderVinegar]: formatIngredient(1, 'teaspoon', 'cider vinegar', measurement),
     [cauliflower]: formatIngredient(0.5, 'whole', 'Cabbage', measurement),
@@ -81,7 +81,7 @@ const Enchiladas = ({ settings }) => {
           <ul className={styles.ingredientsList}>
             {getIngredient(flour, 'li')}
             {getIngredient(
-              chilliPowder,
+              smokedPaprika,
               'li',
               ' (use Mild or Hot depending on how spicy you like it)'
             )}
@@ -106,17 +106,17 @@ const Enchiladas = ({ settings }) => {
           <div>
             <p className={styles.heading}>Enchilada Sauce</p>
             <ol className={styles.stepsList}>
-              <li>Heat {getIngredient(5, 'span')} in a pan on a medium heat</li>
+              <li>Heat {getIngredient(oliveOil, 'span')} in a pan on a medium heat</li>
               <li
                 className={
-                  isClickedOrHighlighted([flour, chilliPowder, cumin, oregano, garlicSalt])
+                  isClickedOrHighlighted([flour, smokedPaprika, cumin, oregano, garlicSalt])
                     ? styles.hover
                     : ''
                 }
               >
                 Once the oil is hot, pour in all the dry ingredients{' '}
                 <span className="verbose">
-                  ({getIngredient(flour, 'span')}, {getIngredient(chilliPowder, 'span')},{' '}
+                  ({getIngredient(flour, 'span')}, {getIngredient(smokedPaprika, 'span')},{' '}
                   {getIngredient(cumin, 'span')}, {getIngredient(oregano, 'span')},{' '}
                   {getIngredient(garlicSalt, 'span')})
                 </span>{' '}
@@ -135,6 +135,7 @@ const Enchiladas = ({ settings }) => {
           <div>
             <p className={styles.heading}>Enchilada time</p>
             <ol className={styles.stepsList}>
+              <li>Place a frying pan on a medium/low heat</li>
               <li>
                 Cut up the {getIngredient(cauliflower, 'span')} and{' '}
                 {getIngredient(redPepper, 'span')} into small chunks
