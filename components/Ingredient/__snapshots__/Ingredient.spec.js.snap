@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Ingredient /> Ingredient is rendered with a span by default 1`] = `
+<span
+  class="ingredient "
+>
+  A tasty pie
+</span>
+`;

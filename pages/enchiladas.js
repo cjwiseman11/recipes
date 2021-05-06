@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from '../styles/Home.module.css';
 
-import PageContainer from '../components/pageContainer';
+import PageContainer from '../components/PageContainer/index';
 import formatIngredient from '../components/formatIngredient';
 import Ingredient from '../components/Ingredient/index';
 

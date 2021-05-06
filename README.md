@@ -6,7 +6,7 @@ I've wanted to try out NextJS on a side project for a while, as well as wanting 
 
 - Uses create-next-app
 - No CSS/FE framework, just my terrible design!
-- Focus on performance, Core Web Vitals
+- Focus on performance (Core Web Vitals) and Accessibility
 
 ## Testing
 I am trying out Jest with react-testing-library as I have only ever used it with Enzyme
