@@ -21,15 +21,8 @@ jobs:
         run: npm run test-ci
         env:
           CI: true
-  deploy:
-    needs: [client]
-    name: 'Deploy to Github Pages'
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.x]
-    steps:
       - name: 'Build Nextjs'
         run: npm run build
       - name: 'Export folder'
         run: npm run export
+
