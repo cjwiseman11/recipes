@@ -25,4 +25,5 @@ jobs:
     needs: [client]
     name: 'Deploy to Github Pages'
     steps:
-      run: npm run export
+      - name: 'Export folder'
+        run: npm run export
