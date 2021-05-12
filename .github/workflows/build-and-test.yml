@@ -24,6 +24,10 @@ jobs:
   deploy:
     needs: [client]
     name: 'Deploy to Github Pages'
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
     steps:
       - name: 'Export folder'
         run: npm run export
