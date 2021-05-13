@@ -23,6 +23,7 @@ jobs:
           CI: true
   deploy:
     needs: build
+    runs-on: ubuntu-latest
     steps:
       - name: 'Build Nextjs'
         run: npm run build
