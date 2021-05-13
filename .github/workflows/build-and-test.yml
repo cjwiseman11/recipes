@@ -19,8 +19,8 @@ jobs:
     steps:
       - name: Unit Tests
         run: npm run test-ci
-          env:
-            CI: true
+        env:
+          CI: true
   deploy:
     needs: build
     steps:
