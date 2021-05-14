@@ -26,7 +26,7 @@ jobs:
       - name: 'Export folder'
         run: npm run export
       - name: Deploy 🚀
-        # if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main'
         uses: JamesIves/github-pages-deploy-action@4.1.3
         with:
           branch: gh-pages # The branch the action should deploy to.
